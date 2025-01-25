@@ -1,6 +1,10 @@
 function Front() {
     this.quiz_box=document.querySelector("#quiz-box");
     this.body=document.querySelector("#quiz-box #body");
+    
+    this.correctIcon='<i class="bi bi-check-circle"></i>';
+    this.inCorrectIcon='<i class="bi bi-x-circle"></i>';
+
 
 }
 
@@ -21,6 +25,7 @@ Front.prototype.soruGoster= function(soru) {
 
         const option=document.createElement("div");
         option.classList.add("option");
+        option.addEventListener("click",optionSelected);
 
         const span=document.createElement("span");
         span.textContent=key +")" +value;
@@ -39,6 +44,13 @@ Front.prototype.soruGoster= function(soru) {
 
 }
 
+Front.prototype.disableAllOption= function()
+{ 
+    const options=document.querySelectorAll(".option");
+    for(let option of options) {
+        option.classList.add("disabled");
+    }
+}
 
 
 

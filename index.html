@@ -1,23 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 
 </head>
-<body> 
-    <h1>Quiz App</h1>
+
+<body>
+
+    <div class="app-container">
+        <div id="quiz-box" class="card">
+            <div id="header" class="card-header">
+                <h4 class="app-title mb-0">Quiz App</h4>
+            </div>
+            <div id="body" class="card-body">
+
+                <h5 class="question-title">1-Hangisi JavaScript paket yönetim uygulamasıdır?</h5>
+
+
+                <div class="option-list">
+                    <div class="option">
+                        <span>a: Node.js</span>
+                    </div>
+                    <div class="option">
+                        <span>b: TypeScript</span>
+                    </div>
+                    <div class="option">
+                        <span>c: Nuget</span>
+                    </div>
+                    <div class="option">
+                        <span>d: npm</span>
+                    </div>
+                </div>
+            </div>
+            <div id="footer"></div>
+
+        </div>
+    </div>
+
 
     <button id="btnSoruGetir">Sonraki Soru</button>
 
-    
-    
+
+
     <script src="soru.js"></script>
+    <script src="ui.js"></script>
     <script src="quiz.js"></script>
-     <script src="app.js"></script>
-     
+    <script src="app.js"></script>
+
 </body>
+
 </html>

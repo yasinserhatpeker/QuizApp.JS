@@ -1,0 +1,21 @@
+.app-container {
+    width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.option-list {
+    padding: 12px;
+}
+.option-list .option {
+    border: 1px solid #151d3b;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}

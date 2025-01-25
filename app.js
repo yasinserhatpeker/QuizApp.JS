@@ -9,9 +9,11 @@ const soruListesi = [
 
 const quiz= new Quiz(soruListesi);
 
+const front =new Front();
+
 document.getElementById("btnSoruGetir").addEventListener("click",function() {
     if(quiz.sorular.length > quiz.soruIndex) {
-        console.log(quiz.soruGetir());
+        front.soruGoster(quiz.soruGetir());
         quiz.soruIndex++;
         console.log(quiz);
     }

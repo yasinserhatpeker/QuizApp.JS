@@ -22,7 +22,8 @@ document.getElementById("btnSoruGetir").addEventListener("click",function() {
 });
 
 function optionSelected(e) {
-    const cevap=e.target.textContent[0];
+    
+  const cevap=e.target.textContent[0];
    const soru=quiz.soruGetir();    
    if(soru.cevabiKontrolEt(cevap)) {
      e.target.classList.add("correct");

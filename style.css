@@ -51,5 +51,18 @@
 }
 
 #score-box {
-    
+    text-align: center;
+    padding: 30px;
+}
+#score-box i{
+    font-size: 55px;
+    color: #ffd33d;
+    margin-bottom: 10px;
+
+}
+#score-box .score-text {
+    font-size: 20px;
+    font-weight: 550;
+    margin-bottom: 10px;
+
 }

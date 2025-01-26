@@ -5,6 +5,8 @@ function Front() {
     this.correctIcon='<i class="bi bi-check-circle"></i>';
     this.inCorrectIcon='<i class="bi bi-x-circle"></i>';
     this.btnNext=document.querySelector(".btn-next");
+    this.btnReplay=document.querySelector(".btn-replay");
+    this.btnQuit=document.querySelector(".btn-quit");;
 
 
 
@@ -58,6 +60,12 @@ Front.prototype.disableAllOption= function()
 Front.prototype.soruSayisiniGoster=function(soruSirasi,toplamSoru) {
     const etiket=`<span class="badge text-bg-danger"> ${soruSirasi} / ${toplamSoru} </span`;
     document.querySelector(".question-index").innerHTML=etiket;
+}
+
+Front.prototype.skoruGoster= function(toplamSoru,dogruCevapSayisi) {
+    const etiket=`Toplam ${toplamSoru} sorudan ${dogruCevapSayisi} doğru sayınız var!`;
+    document.querySelector(".score-text").innerHTML=etiket;
+
 }
 
 

@@ -11,9 +11,10 @@ const quiz= new Quiz(soruListesi);
 
 const front =new Front();
 
-document.getElementById("btnSoruGetir").addEventListener("click",function() {
+front.btnNext.addEventListener("click",function() {
     if(quiz.sorular.length > quiz.soruIndex) {
         front.soruGoster(quiz.soruGetir());
+        front.soruSayisiniGoster(quiz.soruIndex+1,quiz.sorular.length);
          console.log(quiz);
     }
     else {
@@ -22,17 +23,22 @@ document.getElementById("btnSoruGetir").addEventListener("click",function() {
 });
 
 function optionSelected(e) {
-    
+   let selectedElement=e.target;
+
+   if(selectedElement.nodeName==="SPAN") {
+    selectedElement=selectedElement.parentElement;
+   }
   const cevap=e.target.textContent[0];
-   const soru=quiz.soruGetir();    
+   const soru=quiz.soruGetir();  
+
    if(soru.cevabiKontrolEt(cevap)) {
-     e.target.classList.add("correct");
-     e.target.insertAdjacentHTML("beforeend",front.correctIcon);
+     selectedElement.classList.add("correct");
+     selectedElement.insertAdjacentHTML("beforeend",front.correctIcon);
 
    }
    else {
-    e.target.classList.add("incorrect");
-    e.target.insertAdjacentHTML("beforeend",front.inCorrectIcon);
+    selectedElement.classList.add("incorrect");
+    selectedElement.insertAdjacentHTML("beforeend",front.inCorrectIcon);
 
    }
    quiz.soruIndex+=1;

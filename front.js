@@ -4,6 +4,9 @@ function Front() {
     
     this.correctIcon='<i class="bi bi-check-circle"></i>';
     this.inCorrectIcon='<i class="bi bi-x-circle"></i>';
+    this.btnNext=document.querySelector(".btn-next");
+
+
 
 
 }
@@ -52,6 +55,10 @@ Front.prototype.disableAllOption= function()
     }
 }
 
+Front.prototype.soruSayisiniGoster=function(soruSirasi,toplamSoru) {
+    const etiket=`<span class="badge text-bg-danger"> ${soruSirasi} / ${toplamSoru} </span`;
+    document.querySelector(".question-index").innerHTML=etiket;
+}
 
 
 

@@ -11,7 +11,7 @@ function Front() {
     this.btnStart=document.querySelector(".btn-start")
     this.timeText=document.querySelector(".time-text");
     this.timeSecond=document.querySelector(".time-second");
-    
+    this.timeLine=document.querySelector(".time-line");
 
 
 

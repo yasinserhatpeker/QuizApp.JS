@@ -13,6 +13,7 @@ const front =new Front();
 
 front.btnStart.addEventListener("click", function() {
     startTimer(10)
+    startTimerLine();
     front.quizBox.classList.add("active");
     front.buttonBox.classList.remove("active");
     front.soruGoster(quiz.soruGetir());
@@ -21,8 +22,10 @@ front.btnStart.addEventListener("click", function() {
 })
 
 front.btnNext.addEventListener("click",function() {
+
     if(quiz.sorular.length > quiz.soruIndex) {
         startTimer(10);
+        startTimerLine();
         front.soruGoster(quiz.soruGetir());
         front.soruSayisiniGoster(quiz.soruIndex+1,quiz.sorular.length);
         front.btnNext.classList.remove("show");
@@ -38,6 +41,7 @@ front.btnNext.addEventListener("click",function() {
 
 function optionSelected(e) {
     clearInterval(counter);
+    clearInterval(counterLine);
    let selectedElement=e.target;
 
    if(selectedElement.nodeName==="SPAN") {
@@ -90,8 +94,27 @@ function startTimer(time) {
         front.timeText.textContent="Süre Bitti";
         front.disableAllOption();
         quiz.soruIndex++;
+
+        front.btnNext.classList.add("show");
     
        }
    }
 
+}
+let counterLine;
+function startTimerLine() {
+    let line_width=0;
+    counterLine=setInterval(timer,20);
+
+    function timer() {
+        line_width++;
+        front.timeLine.style.width=line_width+ "px";
+
+        if(line_width >549) {
+            clearInterval(counterLine);
+
+        }
+    }
+        
+  
 }

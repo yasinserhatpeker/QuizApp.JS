@@ -6,6 +6,12 @@
     transform: translate(-50%,-50%);
 
 }
+#quiz-box #header  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
 
 .option-list {
     padding: 12px;
@@ -74,5 +80,32 @@
     display: none;
 }
 #button-box.active, #quiz-box.active,#score-box.active {
+    display: block;
+}
+
+.time {
+    display:  flex;
+    align-items: center;
+    background: red;
+    color:  #fff;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 15px;
+
+
+}
+.time .time-second {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 5px;
+    margin-left: 5px;
+    color: black;
+    text-align: center;
+}
+.btn-next {
+    display: none;
+}
+
+.btn-next.show{
     display: block;
 }

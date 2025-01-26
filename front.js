@@ -9,6 +9,9 @@ function Front() {
     this.btnReplay=document.querySelector(".btn-replay");
     this.btnQuit=document.querySelector(".btn-quit");;
     this.btnStart=document.querySelector(".btn-start")
+    this.timeText=document.querySelector(".time-text");
+    this.timeSecond=document.querySelector(".time-second");
+    
 
 
 

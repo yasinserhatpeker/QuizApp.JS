@@ -12,16 +12,20 @@ const quiz= new Quiz(soruListesi);
 const front =new Front();
 
 front.btnStart.addEventListener("click", function() {
+    startTimer(10)
     front.quizBox.classList.add("active");
     front.buttonBox.classList.remove("active");
     front.soruGoster(quiz.soruGetir());
     front.soruSayisiniGoster(quiz.soruIndex+1,quiz.sorular.length);
+    front.btnNext.classList.remove("show");
 })
 
 front.btnNext.addEventListener("click",function() {
     if(quiz.sorular.length > quiz.soruIndex) {
+        startTimer(10);
         front.soruGoster(quiz.soruGetir());
         front.soruSayisiniGoster(quiz.soruIndex+1,quiz.sorular.length);
+        front.btnNext.classList.remove("show");
        
     }
     else {
@@ -33,6 +37,7 @@ front.btnNext.addEventListener("click",function() {
 });
 
 function optionSelected(e) {
+    clearInterval(counter);
    let selectedElement=e.target;
 
    if(selectedElement.nodeName==="SPAN") {
@@ -54,6 +59,7 @@ function optionSelected(e) {
    }
    quiz.soruIndex+=1;
    front.disableAllOption();
+   front.btnNext.classList.add("show");
 }
 
 front.btnReplay.addEventListener("click",function() {
@@ -68,3 +74,24 @@ front.btnReplay.addEventListener("click",function() {
 front.btnQuit.addEventListener("click",function(){
     window.location.reload();
 })
+
+let counter;
+
+function startTimer(time) {
+   front.timeText.textContent="Kalan Süre";
+   counter=setInterval(timer,1000);
+
+   function timer() {
+    front.timeSecond.textContent=time;
+    time--;
+
+    if(time < 0) {
+        clearInterval(counter);
+        front.timeText.textContent="Süre Bitti";
+        front.disableAllOption();
+        quiz.soruIndex++;
+    
+       }
+   }
+
+}

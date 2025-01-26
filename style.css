@@ -66,3 +66,13 @@
     margin-bottom: 10px;
 
 }
+#button-box 
+{
+    text-align: center; 
+ }
+#button-box ,#quiz-box , #score-box {
+    display: none;
+}
+#button-box.active, #quiz-box.active,#score-box.active {
+    display: block;
+}

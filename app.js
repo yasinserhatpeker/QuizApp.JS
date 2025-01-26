@@ -11,15 +11,24 @@ const quiz= new Quiz(soruListesi);
 
 const front =new Front();
 
+front.btnStart.addEventListener("click", function() {
+    front.quizBox.classList.add("active");
+    front.buttonBox.classList.remove("active");
+    front.soruGoster(quiz.soruGetir());
+    front.soruSayisiniGoster(quiz.soruIndex+1,quiz.sorular.length);
+})
+
 front.btnNext.addEventListener("click",function() {
     if(quiz.sorular.length > quiz.soruIndex) {
         front.soruGoster(quiz.soruGetir());
         front.soruSayisiniGoster(quiz.soruIndex+1,quiz.sorular.length);
-         console.log(quiz);
+       
     }
     else {
-        console.log("quiz bitti");
-        front.skoruGoster(quiz.sorular.length,quiz.dogruCevapSayisi);
+       front.scoreBox.classList.add("active");
+       front.quizBox.classList.remove("active");
+    
+       front.skoruGoster(quiz.sorular.length,quiz.dogruCevapSayisi);
     }
 });
 
@@ -51,8 +60,9 @@ front.btnReplay.addEventListener("click",function() {
     quiz.soruIndex=0;
     quiz.dogruCevapSayisi=0;
     // start button
-    front.btnNext.click();
-    front.skoruGoster(quiz.sorular.length,quiz.dogruCevapSayisi);
+    front.btnStart.click();
+    front.scoreBox.classList.remove("active");
+    
 })
 
 front.btnQuit.addEventListener("click",function(){
